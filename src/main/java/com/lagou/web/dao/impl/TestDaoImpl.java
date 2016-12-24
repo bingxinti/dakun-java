@@ -17,7 +17,7 @@ public class TestDaoImpl  extends BaseDaoImpl implements TestDao{
     public List<TestModel> selectAllTest()
     {
         List<TestModel> testList =  testDao.selectAllTest();
-        return testList;
+        return  testList;
     }
 
 }
