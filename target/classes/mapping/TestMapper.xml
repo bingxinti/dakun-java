@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lagou.web.dao.TestDao">
-
+    <!--BEFORE|AFTER-->
 
     <select id="selectAllTest" resultType="com.lagou.web.model.TestModel">
         SELECT * FROM test limit 1
     </select>
-
 
     <!--<select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String" statementType="STATEMENT">-->
         <!--select-->
@@ -26,22 +25,45 @@
         <!--where title = ${title}-->
     <!--</select>-->
 
+
+
+    <!--公共执行 SQL 操作-->
     <!--查询数据-->
-    <select id="select" resultType="java.util.HashMap"  parameterType="java.util.Map"  statementType="STATEMENT">
+    <select id="query" resultType="java.util.HashMap"  parameterType="java.util.Map"  statementType="STATEMENT">
        ${sql}
     </select>
 
-    <!--<insert id="insert" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="id" >-->
-    <insert id="insert" parameterType="java.util.Map" statementType="STATEMENT" >
-        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
-            SELECT LAST_INSERT_ID() AS id
-        </selectKey>
+    <!--方式1-->
+    <!--<insert id="insert" parameterType="java.util.Map" statementType="STATEMENT" >-->
+        <!--<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">-->
+            <!--SELECT LAST_INSERT_ID() AS id-->
+    <!--</selectKey>-->
+    <!--${sql}-->
+    <!--</insert>-->
+    <!--方式2-->
+    <insert id="insert" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="lastInsertID" >
         ${sql}
     </insert>
 
-    <update id="update" parameterType="java.util.Map"  statementType="STATEMENT" >
+    <!--修改之后返回的是 修改的函数，而不是修改影响行数  -->
+    <!--<update id="update" parameterType="java.util.Map"  statementType="STATEMENT"   >-->
+        <!--<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="updateID">-->
+          <!--SELECT ROW_COUNT() AS updateID-->
+        <!--</selectKey>-->
+        <!--${sql}-->
+    <!--</update>-->
+
+    <!--修改之后返回 修改行数  （支持deleteSQL）-->
+    <update id="update" parameterType="java.util.Map"  statementType="STATEMENT"   >
       ${sql}
     </update>
+
+    <!--<delete id="delete" parameterType="java.util.Map"  statementType="STATEMENT"   >-->
+        <!--${sql}-->
+    <!--</delete>-->
+
+
+
 
 
 </mapper>

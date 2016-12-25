@@ -1,6 +1,7 @@
 package com.lagou.web.service.impl;
 
 import com.lagou.web.dao.TestDao;
+import com.lagou.web.dao.impl.TestDaoImpl;
 import com.lagou.web.model.TestModel;
 import com.lagou.web.service.TestService;
 import org.apache.ibatis.session.SqlSession;
@@ -26,32 +27,25 @@ public class TestServiceImpl  extends BaseServiceImpl  implements TestService{
     public List<TestModel> getAllTest(){
 
 //        查询
-        Map<String, Object> map = new HashMap<String, Object>();
+//        Map<String, Object> map = new HashMap<String, Object>();
 
-//
-//        map.put("sql", " SELECT * FROM test  t left join user u on 1;  ");
-//        map.put("sql", " SELECT * FROM test ; ");
-////        map.put("sql", " INSERT INTO `dbdakun`.`test` (`title`, `sort`) VALUES ('1', '1'); ");
-//        List<Map<String,Object>> queryList = testDao.select(map);
 
 
 //        map.put("sql", " INSERT INTO `test` (`title`) VALUES ('1')  ");
 //        map.put("sql", " INSERT INTO `test` ( `sort`) VALUES ('8') ");
-////
 //        int  insert = testDao.insert(map);
+//        Object lastInsertID = map.get("lastInsertID");
 
 
-        map.put("sql", " UPDATE `test` SET `title`='12312' WHERE `id`='52' ");
-        String  update = testDao.update(map);
 
-//
+//        map.put("sql", " UPDATE `test` SET `title`='12312' WHERE `id`='52' ");
+//        map.put("sql", " UPDATE `test` SET `title` = '擦擦擦擦擦擦' WHERE `id` = '50' ");
+//        int  update = testDao.update(map);
 
-        //查询，返回List<Map>
-//        List<Map<String, Object>> list = sqlMapper.selectList("select * from country where id < 11");
-
-
+//        map.put("sql", "  DELETE FROM `dbdakun`.`test` WHERE `id`='64'; ");
+//        int  update = testDao.delete(map);
 
         return testDao.selectAllTest();
-
     }
+
 }

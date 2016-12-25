@@ -11,16 +11,25 @@ import java.util.Map;
 
 @Repository
 public interface TestDao {
+
     List<TestModel> selectAllTest();
 
-//    List<Object> query(Map map);
-    List<Map<String,Object>>  select(Map map);
+    List<Map<String,Object>>  query(Map map);
 
-    int insert(Map map);
 
-    String update(Map map);
+//    int insert(Map map);
+//
+//    int update(Map map);
+//
+//
+//    int delete(Map map);
 
 //    editIssuedData(Map map);
+
+
+
+    void select();
+
 
 
 }
