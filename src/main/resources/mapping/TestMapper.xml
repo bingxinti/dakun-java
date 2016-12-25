@@ -4,7 +4,7 @@
 
 
     <select id="selectAllTest" resultType="com.lagou.web.model.TestModel">
-        SELECT * FROM test
+        SELECT * FROM test limit 1
     </select>
 
 
@@ -15,9 +15,9 @@
     <!--</select>-->
 
 
-    <select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String"  >
-        SELECT * FROM test  where  id =  #{id}
-    </select>
+    <!--<select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String"  >-->
+        <!--SELECT * FROM test  where  id =  #{id}-->
+    <!--</select>-->
 
     <!--<select id="getUser" resultType="java.util.Map"  parameterType="java.util.Map"  statementType="STATEMENT">-->
         <!--select-->
@@ -27,14 +27,18 @@
     <!--</select>-->
 
     <!--查询数据-->
-    <select id="query" resultType="java.util.HashMap"  parameterType="java.util.Map"  statementType="STATEMENT">
+    <select id="select" resultType="java.util.HashMap"  parameterType="java.util.Map"  statementType="STATEMENT">
        ${sql}
     </select>
 
-
-    <insert id="add" parameterType="java.util.Map" statementType="STATEMENT">
+    <insert id="insert" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="id" >
         ${sql}
     </insert>
+
+    <update id="update" parameterType="java.util.Map"  statementType="STATEMENT"  >
+      ${sql}
+    </update>
+
 
 
 </mapper>

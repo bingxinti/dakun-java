@@ -4,7 +4,7 @@
 
 
     <select id="selectAllTest" resultType="com.lagou.web.model.TestModel">
-        SELECT * FROM test
+        SELECT * FROM test limit 1
     </select>
 
 
@@ -15,9 +15,9 @@
     <!--</select>-->
 
 
-    <select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String"  >
-        SELECT * FROM test  where  id =  #{id}
-    </select>
+    <!--<select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String"  >-->
+        <!--SELECT * FROM test  where  id =  #{id}-->
+    <!--</select>-->
 
     <!--<select id="getUser" resultType="java.util.Map"  parameterType="java.util.Map"  statementType="STATEMENT">-->
         <!--select-->
@@ -32,7 +32,7 @@
     </select>
 
 
-    <insert id="add" parameterType="java.util.Map" statementType="STATEMENT">
+    <insert id="add" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="userId" >
         ${sql}
     </insert>
 

@@ -14,8 +14,12 @@ public interface TestDao {
     List<TestModel> selectAllTest();
 
 //    List<Object> query(Map map);
-    List<Map<String,Object>>  query(Map map);
-    int   add(Map map);
+    List<Map<String,Object>>  select(Map map);
+
+    int insert(Map map);
+
+    int update(Map map);
+
 //    editIssuedData(Map map);
 
 

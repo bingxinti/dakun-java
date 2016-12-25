@@ -27,17 +27,22 @@ public class TestServiceImpl  extends BaseServiceImpl  implements TestService{
 
 //        查询
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("sql", " INSERT INTO `test` (`title`) VALUES ('1')  ");
+
 //
 //        map.put("sql", " SELECT * FROM test  t left join user u on 1;  ");
 //        map.put("sql", " SELECT * FROM test ; ");
 ////        map.put("sql", " INSERT INTO `dbdakun`.`test` (`title`, `sort`) VALUES ('1', '1'); ");
-//        List<Map<String,Object>> queryList = testDao.query(map);
+//        List<Map<String,Object>> queryList = testDao.select(map);
 
 
+//        map.put("sql", " INSERT INTO `test` (`title`) VALUES ('1')  ");
+//        map.put("sql", " INSERT INTO `test` ( `sort`) VALUES ('8') ");
+//
+//        int  addID = testDao.insert(map);
 
-        int  addID = testDao.add(map);
 
+        map.put("sql", " UPDATE `test` SET `title`='2' WHERE `id`='52' ");
+        int  addID = testDao.update(map);
 
 //
 
