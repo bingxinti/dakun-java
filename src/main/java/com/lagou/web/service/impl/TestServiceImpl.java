@@ -37,19 +37,17 @@ public class TestServiceImpl  extends BaseServiceImpl  implements TestService{
 
 //        map.put("sql", " INSERT INTO `test` (`title`) VALUES ('1')  ");
 //        map.put("sql", " INSERT INTO `test` ( `sort`) VALUES ('8') ");
-//
-//        int  addID = testDao.insert(map);
+////
+//        int  insert = testDao.insert(map);
 
 
-        map.put("sql", " UPDATE `test` SET `title`='2' WHERE `id`='52' ");
-        int  addID = testDao.update(map);
+        map.put("sql", " UPDATE `test` SET `title`='12312' WHERE `id`='52' ");
+        String  update = testDao.update(map);
 
 //
 
         //查询，返回List<Map>
 //        List<Map<String, Object>> list = sqlMapper.selectList("select * from country where id < 11");
-
-
 
 
 

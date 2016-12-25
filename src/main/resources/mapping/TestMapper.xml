@@ -31,14 +31,17 @@
        ${sql}
     </select>
 
-    <insert id="insert" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="id" >
+    <!--<insert id="insert" parameterType="java.util.Map" statementType="STATEMENT"  useGeneratedKeys="true"  keyProperty="id" >-->
+    <insert id="insert" parameterType="java.util.Map" statementType="STATEMENT" >
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
         ${sql}
     </insert>
 
-    <update id="update" parameterType="java.util.Map"  statementType="STATEMENT"  >
+    <update id="update" parameterType="java.util.Map"  statementType="STATEMENT" >
       ${sql}
     </update>
-
 
 
 </mapper>

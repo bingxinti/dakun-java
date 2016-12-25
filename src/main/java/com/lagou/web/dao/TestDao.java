@@ -18,7 +18,7 @@ public interface TestDao {
 
     int insert(Map map);
 
-    int update(Map map);
+    String update(Map map);
 
 //    editIssuedData(Map map);
 
