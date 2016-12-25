@@ -7,4 +7,34 @@
         SELECT * FROM test
     </select>
 
+
+    <!--<select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String" statementType="STATEMENT">-->
+        <!--select-->
+        <!--*-->
+        <!--from ${tableName}-->
+    <!--</select>-->
+
+
+    <select id="testAll" resultType="com.lagou.web.model.TestModel" parameterType="java.lang.String"  >
+        SELECT * FROM test  where  id =  #{id}
+    </select>
+
+    <!--<select id="getUser" resultType="java.util.Map"  parameterType="java.util.Map"  statementType="STATEMENT">-->
+        <!--select-->
+         <!--*-->
+        <!--from test-->
+        <!--where title = ${title}-->
+    <!--</select>-->
+
+    <!--查询数据-->
+    <select id="query" resultType="java.util.HashMap"  parameterType="java.util.Map"  statementType="STATEMENT">
+       ${sql}
+    </select>
+
+
+    <insert id="add" parameterType="java.util.Map" statementType="STATEMENT">
+        ${sql}
+    </insert>
+
+
 </mapper>

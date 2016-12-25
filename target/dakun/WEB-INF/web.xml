@@ -36,10 +36,15 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.util.</listener-class>-->
+    <!--</listener>-->
+
     <!-- 防止spring内存溢出监听器，比如quartz -->
     <listener>
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
+
 
 
     <!-- spring mvc servlet-->
@@ -60,23 +65,6 @@
         <servlet-name>SpringMVC</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-
-
-
-
-
-    <welcome-file-list>
-        <welcome-file>/home.jsp</welcome-file>
-    </welcome-file-list>
-
-    <!-- session配置 -->
-    <session-config>
-        <session-timeout>15</session-timeout>
-    </session-config>
-
-
-
 
 
 

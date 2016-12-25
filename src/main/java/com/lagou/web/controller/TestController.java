@@ -32,7 +32,6 @@ public class TestController extends BaseController{
     {
         List<TestModel> testList = testService.getAllTest();
         model.addAttribute("testList",testList);
-
         String str1 = "str1str1str1";
     }
 

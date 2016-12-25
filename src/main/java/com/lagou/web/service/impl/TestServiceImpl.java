@@ -3,11 +3,15 @@ package com.lagou.web.service.impl;
 import com.lagou.web.dao.TestDao;
 import com.lagou.web.model.TestModel;
 import com.lagou.web.service.TestService;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Demon on 16/12/19.
@@ -20,6 +24,30 @@ public class TestServiceImpl  extends BaseServiceImpl  implements TestService{
     private TestDao testDao;
 
     public List<TestModel> getAllTest(){
+
+//        查询
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("sql", " INSERT INTO `test` (`title`) VALUES ('1')  ");
+//
+//        map.put("sql", " SELECT * FROM test  t left join user u on 1;  ");
+//        map.put("sql", " SELECT * FROM test ; ");
+////        map.put("sql", " INSERT INTO `dbdakun`.`test` (`title`, `sort`) VALUES ('1', '1'); ");
+//        List<Map<String,Object>> queryList = testDao.query(map);
+
+
+
+        int  addID = testDao.add(map);
+
+
+//
+
+        //查询，返回List<Map>
+//        List<Map<String, Object>> list = sqlMapper.selectList("select * from country where id < 11");
+
+
+
+
+
         return testDao.selectAllTest();
 
     }
