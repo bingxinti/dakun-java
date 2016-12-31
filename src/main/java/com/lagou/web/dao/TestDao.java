@@ -12,5 +12,5 @@ public interface TestDao {
 
     List<TestModel> selectAllTest();
 
-//    List<Map<String,Object>>  query(Map map);
+    List<Map<String,Object>>  query2(Map map);
 }

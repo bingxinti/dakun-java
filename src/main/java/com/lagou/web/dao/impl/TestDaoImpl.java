@@ -4,6 +4,7 @@ import com.lagou.web.dao.TestDao;
 import com.lagou.web.model.TestModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -14,22 +15,21 @@ import java.util.Map;
  * Created by Demon on 16/12/25.
  */
 
-@Repository(value="TestDao")
-public class TestDaoImpl  implements TestDao{
 
-//    @Resource
-//    private TestDao testDao;
+//@Repository(value="testDao")
+public class TestDaoImpl   implements TestDao{
 
-//    public List<Map<String,Object>> query(Map map)
-//    {
-//        return testDao.query(map);
-//    }
+    @Resource
+    private TestDao testDao;
+
+    public List<Map<String,Object>> query2(Map map)
+    {
+        return testDao.query2(map);
+    }
 
 
     public List<TestModel> selectAllTest()
     {
-
-        String a = "dwq";
         return null;
 //        return testDao.selectAllTest();
     }

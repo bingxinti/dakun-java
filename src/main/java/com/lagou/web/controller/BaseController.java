@@ -5,3 +5,4 @@ package com.lagou.web.controller;
  */
 public class BaseController {
 }
+
