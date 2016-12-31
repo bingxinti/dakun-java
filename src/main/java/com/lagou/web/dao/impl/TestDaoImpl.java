@@ -2,6 +2,8 @@ package com.lagou.web.dao.impl;
 
 import com.lagou.web.dao.TestDao;
 import com.lagou.web.model.TestModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -11,39 +13,40 @@ import java.util.Map;
 /**
  * Created by Demon on 16/12/25.
  */
-public class TestDaoImpl  extends BaseDaoImpl implements TestDao {
 
-    @Resource
-    private TestDao testDao;
+@Repository(value="TestDao")
+public class TestDaoImpl  implements TestDao{
 
-    public List<Map<String,Object>> query(Map map)
-    {
-        return testDao.query(map);
-    }
+//    @Resource
+//    private TestDao testDao;
+
+//    public List<Map<String,Object>> query(Map map)
+//    {
+//        return testDao.query(map);
+//    }
 
 
     public List<TestModel> selectAllTest()
     {
-        return testDao.selectAllTest();
+
+        String a = "dwq";
+        return null;
+//        return testDao.selectAllTest();
     }
 
-
-    public void select()
-    {
-
-        //查询
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("sql", " SELECT * FROM test LIMIT 3 ; ");
-        List<Map<String,Object>> queryList = testDao.query(map);
-
-
-
-    }
-
-    public String testdb()
-    {
-        return "dqwdqwd";
-    }
+//
+//    public void select()
+//    {
+//        //查询
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("sql", " SELECT * FROM test LIMIT 3 ; ");
+//        List<Map<String,Object>> queryList = testDao.query(map);
+//    }
+//
+//    public String testdb()
+//    {
+//        return "dqwdqwd";
+//    }
 
 
 }
